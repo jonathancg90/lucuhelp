@@ -1,0 +1,7 @@
+<ul class="nav nav-sidebar">
+    <li {% if menu == 'ticket' %} class="active" {% endif %}><a href="{% url 'ticket_view' %}">Tickets <span class="sr-only">(current)</span></a></li>
+    <li {% if menu == 'report' %} class="active" {% endif %}><a href="#">Reportes</a></li>
+</ul>
+<ul class="nav nav-sidebar">
+    <li{% if menu == 'config' %} class="active" {% endif %}><a href="{% url 'config_view' config.id %}">Configuraciones</a></li>
+</ul>

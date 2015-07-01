@@ -1,0 +1,38 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lucu Help</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" href="{% static "bower_components/bootstrap/dist/css/bootstrap.min.css" %}" />
+    <link rel="stylesheet" href="{% static "css/dashboard.css" %}" />
+    <link rel="stylesheet" href="{% static "css/font-awesome.min.css" %}" />
+    {% block styles %}
+    {% endblock styles %}
+</head>
+<body>
+
+{% include "commons/top_bar.html" %}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+            {% include "commons/menu_bar.html" %}
+
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+            {% block content %}
+                
+            {% endblock content %}
+        </div>
+    </div>
+</div>
+
+<script src="{% static "bower_components/jquery/dist/jquery.min.js" %}" ></script>
+<script src="{% static "bower_components/bootstrap/dist/js/bootstrap.min.js" %}" ></script>
+<script src="{% static "bower_components/bootstrap/js/dropdown.js" %}"></script>
+{% block scripts %}
+{% endblock scripts %}
+</body>
+</html>

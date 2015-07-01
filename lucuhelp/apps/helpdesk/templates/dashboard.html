@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs" role="tablist">
+            <li class="active">
+                <a href="#open" role="tab" data-toggle="tab">
+                    <icon class="fa fa-bookmark "></icon> Abiertos
+                </a>
+            </li>
+            <li><a href="#profile" role="tab" data-toggle="tab">
+                <i class="fa fa-bullhorn"></i> Pendientes
+            </a>
+            </li>
+            <li>
+                <a href="#messages" role="tab" data-toggle="tab">
+                    <i class="fa fa-server"></i> Reabiertos
+                </a>
+            </li>
+            <li>
+                <a href="#settings" role="tab" data-toggle="tab">
+                    <i class="fa fa-check "></i> Resueltos
+                </a>
+            </li>
+        </ul>
+
+        <!-- Tab panes -->
+        <div class="tab-content">
+            <div class="tab-pane fade active in" id="open">
+                <div class="list-group">
+                    {% for ticket in tickets.tickets_open %}
+                        <a href="#" class="list-group-item">
+                            <h4 class="list-group-item-heading">{{ ticket.subject }}</h4>
+                            <p class="list-group-item-text">{{ ticket.description }}</p>
+                        </a>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="tab-pane fade" id="profile">
+                <div class="list-group">
+                    {% for ticket in tickets.tickets_pending %}
+                        <a href="#" class="list-group-item">
+                            <h4 class="list-group-item-heading">{{ ticket.subject }}</h4>
+                            <p class="list-group-item-text">{{ ticket.description }}</p>
+                        </a>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="tab-pane fade" id="messages">
+                <div class="list-group">
+                    {% for ticket in tickets.tickets_reopened %}
+                        <a href="#" class="list-group-item">
+                            <h4 class="list-group-item-heading">{{ ticket.subject }}</h4>
+                            <p class="list-group-item-text">{{ ticket.description }}</p>
+                        </a>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="tab-pane fade" id="settings">
+                <div class="list-group">
+                    {% for ticket in tickets.tickets_solved %}
+                        <a href="#" class="list-group-item">
+                            <h4 class="list-group-item-heading">{{ ticket.subject }}</h4>
+                            <p class="list-group-item-text">{{ ticket.description }}</p>
+                        </a>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+
+{% endblock %}
+
+{% block scripts %}
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $(".dropdown-toggle").dropdown('toggle');
+        });
+    </script>
+{% endblock %}

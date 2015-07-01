@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <ol class="breadcrumb">
+        <li><a href="#">Tickets</a></li>
+    </ol>
+    <div class="row">
+        <div class="col-xs-14 col-md-10">
+            <form class="form-inline">
+                <div class="form-group">
+                    <label for="exampleInputName2">Buscar</label>
+                    <input type="text" class="form-control" id="exampleInputName2" placeholder="Termino de busqueda">
+                </div>
+                <button type="submit" class="btn btn-default">Buscar</button>
+            </form>
+        </div>
+        <div class="col-xs-4 col-md-2">
+            <button type="submit" class="btn btn-primary">Nuevo</button>
+        </div>
+    </div>
+    <hr/>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Cliente</th>
+                <th>Asunto</th>
+                <th>Prioridad</th>
+                <th>Asignado</th>
+                <th>Opciones</th>
+            </tr>
+        </thead>
+        <tbod>
+            <tr>
+                <td>aaaa</td>
+                <td>sss</td>
+                <td>dddd</td>
+                <td>dddd</td>
+                <td><a href="">Editar</a> |
+                    <a href="">Asignar</a></td>
+            </tr>
+        </tbod>
+    </table>
+
+{% endblock %}
